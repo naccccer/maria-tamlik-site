@@ -1,236 +1,79 @@
-/* Custom Properties for easy theming */
-:root {
-    --color-primary: #a3895e; /* Gold/Bronze accent */
-    --color-secondary: #4a4a4a;
-    --color-background: #1c1c1c; /* Dark background */
-    --color-text: #e0e0e0; /* Light text */
-    --color-text-light: #f5f5f5;
-    --font-family-header: 'Georgia', serif;
-    --font-family-body: 'Arial', sans-serif;
-    --spacing-unit: 1rem;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maria Tamlik — Private Real Estate & Investment Club</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
 
-/* Reset and Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    <header class="navbar">
+        <div class="container">
+            <a href="#" class="logo-link">
+                <img src="assets/logo.png" alt="Maria Tamlik Logo" class="logo">
+            </a>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#investment">Investments</a>
+                <a href="#contact" class="btn btn-primary">Join Club</a>
+            </nav>
+        </div>
+    </header>
 
-body {
-    font-family: var(--font-family-body);
-    line-height: 1.6;
-    color: var(--color-text);
-    background-color: var(--color-background);
-    scroll-behavior: smooth;
-}
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Exclusive Real Estate Opportunities</h1>
+                <p class="subtitle">Maria Tamlik: Your access to private, high-yield property and investment strategy.</p>
+                <a href="#contact" class="btn btn-primary btn-large">Request Membership</a>
+            </div>
+        </section>
 
-h1, h2, h3 {
-    font-family: var(--font-family-header);
-    color: var(--color-text-light);
-    margin-bottom: var(--spacing-unit);
-}
+        <section id="about" class="about">
+            <div class="container">
+                <h2>The Elite Circle of Investment</h2>
+                <p>Maria Tamlik is an invitation-only club dedicated to curating and managing premier real estate assets for our members. We offer bespoke investment strategies, off-market deals, and unparalleled market insight.</p>
+                <p>Our focus is on securing long-term wealth through diversified, stable, and high-potential properties across global markets.</p>
+            </div>
+        </section>
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+        <section id="investment" class="investment-preview">
+            <div class="container">
+                <h2>Current Mandates</h2>
+                <div class="investment-card">
+                    <h3>Prime Residential Portfolio</h3>
+                    <p>Secured high-demand units in key metropolitan areas. Estimated annual yield: 9.5%</p>
+                </div>
+                <a href="#contact" class="btn btn-secondary">View Private Opportunities (Members Only)</a>
+            </div>
+        </section>
 
-/* --- Navigation Bar --- */
-.navbar {
-    background-color: rgba(28, 28, 28, 0.95); /* Slightly transparent dark */
-    padding: 1rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Begin Your Exclusive Journey</h2>
+                <form id="contact-form">
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="email" placeholder="Professional Email" required>
+                    <textarea placeholder="Tell us about your investment profile." rows="4"></textarea>
+                    <button type="submit" class="btn btn-primary">Submit Application</button>
+                    <p class="form-status" style="display:none; color: green;"></p>
+                </form>
+            </div>
+        </section>
+    </main>
 
-.navbar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Maria Tamlik — Private Real Estate & Investment Club. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
 
-.logo {
-    height: 40px; /* Adjust as needed for your logo.png */
-}
-
-.navbar a {
-    color: var(--color-text);
-    text-decoration: none;
-    margin-left: 20px;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.navbar a:hover {
-    color: var(--color-primary);
-}
-
-/* --- Buttons --- */
-.btn {
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 4px;
-    font-weight: bold;
-    cursor: pointer;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: background-color 0.3s, transform 0.1s;
-    display: inline-block;
-}
-
-.btn-primary {
-    background-color: var(--color-primary);
-    color: var(--color-background);
-}
-
-.btn-primary:hover {
-    background-color: #c9b183; /* Lighter shade of gold */
-    transform: translateY(-1px);
-}
-
-.btn-secondary {
-    background-color: transparent;
-    border: 2px solid var(--color-primary);
-    color: var(--color-primary);
-}
-
-.btn-secondary:hover {
-    background-color: var(--color-primary);
-    color: var(--color-background);
-}
-
-.btn-large {
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
-}
-
-/* --- Sections --- */
-section {
-    padding: 5rem 0;
-}
-
-/* Hero Section */
-.hero {
-    background: url('assets/og-placeholder.png') center/cover no-repeat; /* Use placeholder or actual image */
-    min-height: 70vh;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    color: var(--color-text-light);
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
-    z-index: 1;
-}
-
-.hero .container {
-    position: relative;
-    z-index: 2;
-}
-
-.hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.hero .subtitle {
-    font-size: 1.25rem;
-    margin-bottom: 2.5rem;
-    font-style: italic;
-}
-
-/* About Section */
-.about {
-    text-align: center;
-    background-color: #242424;
-}
-
-.about h2 {
-    color: var(--color-primary);
-    margin-bottom: 2rem;
-}
-
-.about p {
-    max-width: 800px;
-    margin: 1rem auto;
-    font-size: 1.1rem;
-}
-
-/* Investment Section */
-.investment-preview {
-    text-align: center;
-}
-
-.investment-card {
-    background-color: #2b2b2b;
-    padding: 2rem;
-    border-left: 5px solid var(--color-primary);
-    margin: 2rem auto 3rem;
-    max-width: 600px;
-    text-align: left;
-    border-radius: 4px;
-}
-
-/* Contact Section (Form) */
-.contact {
-    background-color: #0d0d0d;
-    text-align: center;
-}
-
-.contact h2 {
-    margin-bottom: 2rem;
-}
-
-#contact-form {
-    max-width: 500px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-#contact-form input[type="text"],
-#contact-form input[type="email"],
-#contact-form textarea {
-    padding: 1rem;
-    border: 1px solid var(--color-secondary);
-    background-color: var(--color-background);
-    color: var(--color-text-light);
-    border-radius: 4px;
-    font-size: 1rem;
-}
-
-/* --- Footer --- */
-footer {
-    background-color: #121212;
-    padding: 2rem 0;
-    font-size: 0.9rem;
-}
-
-footer .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.footer-links a {
-    color: var(--color-text);
-    text-decoration: none;
-    margin-left: 15px;
-}
-
-.footer-links a:hover {
-    color: var(--color-primary);
-}
+    <script src="script.js"></script>
+</body>
+</html>
