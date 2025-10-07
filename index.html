@@ -94,6 +94,14 @@
     .nav-menu.open{display:flex}
   }
   </style>
+  <style>
+  /* HOTFIX: force all animated sections to be visible */
+  [data-animate] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+</style>
+
 </head>
 <body>
   <a class="skip-link" href="#home">Skip to content</a>
