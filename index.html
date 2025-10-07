@@ -1,71 +1,202 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Maria Tamlik — Private Real Estate & Investment Club</title>
-<meta name="description" content="Maria Tamlik is a premium real estate & investment club. We curate high‑quality projects and help members invest with confidence." />
-<meta name="theme-color" content="#006039" />
-<meta property="og:title" content="Maria Tamlik — Private Real Estate & Investment Club" />
-<meta property="og:description" content="Premium real estate & investment club with curated opportunities." />
-<meta property="og:type" content="website" />
-<meta property="og:image" content="assets/og-placeholder.png" />
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-<link rel="stylesheet" href="https://naccccer.github.io/maria-tamlik-site/styles.css?v=2">
-<script>
-if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-document.documentElement.classList.add('reduced-motion');
-}
-</script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Maria Tamlik — Private Real Estate & Investment Club</title>
+  <meta name="description" content="Maria Tamlik is a premium real estate & investment club. We curate high-quality projects and help members invest with confidence." />
+  <meta name="theme-color" content="#006039" />
+  <meta property="og:title" content="Maria Tamlik — Private Real Estate & Investment Club" />
+  <meta property="og:description" content="Premium real estate & investment club with curated opportunities." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/og-placeholder.png" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <!-- ✅ absolute URLs to make sure CSS/JS load -->
+  <link rel="stylesheet" href="https://naccccer.github.io/maria-tamlik-site/styles.css?v=5" />
+  <script>
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('reduced-motion');
+    }
+  </script>
 </head>
 <body>
-<a class="skip-link" href="#home">Skip to content</a>
-<header class="site-header" data-animate>
-<div class="container header-inner">
-<a href="#home" class="brand">
-<img src="assets/logo.png" alt="Maria Tamlik logo" class="logo" />
-<span class="brand-text">Maria&nbsp;Tamlik</span>
-</a>
+  <a class="skip-link" href="#home">Skip to content</a>
 
+  <header class="site-header" data-animate>
+    <div class="container header-inner">
+      <a href="#home" class="brand">
+        <img src="assets/logo.png" alt="Maria Tamlik logo" class="logo" />
+        <span class="brand-text">Maria&nbsp;Tamlik</span>
+      </a>
 
-<nav class="nav" aria-label="Primary">
-<button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" id="navToggle">
-<span class="sr-only">Toggle navigation</span>
-<div class="hamburger"></div>
-</button>
-<ul id="nav-menu" class="nav-menu">
-<li><a href="#home">Home</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#why">Why Us</a></li>
-<li><a href="#club">The Club</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
-</div>
-<div class="scrollbar" aria-hidden="true"><div class="scrollbar__bar" id="scrollbarBar"></div></div>
-</header>
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" id="navToggle">
+          <span class="sr-only">Toggle navigation</span>
+          <div class="hamburger"></div>
+        </button>
+        <ul id="nav-menu" class="nav-menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#why">Why Us</a></li>
+          <li><a href="#club">The Club</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="scrollbar" aria-hidden="true"><div class="scrollbar__bar" id="scrollbarBar"></div></div>
+  </header>
 
+  <!-- HERO -->
+  <section id="home" class="section hero">
+    <div class="container">
+      <div class="hero-copy" data-animate data-animate-delay="0.05">
+        <h1>A club for all types of investments.</h1>
+        <p class="lead">Curated, premium opportunities with a white-glove experience. We combine market insight, selective deal flow, and design-led storytelling to help you invest with clarity.</p>
+        <div class="cta">
+          <a href="#projects" class="btn btn--primary">Explore Projects</a>
+          <a href="#contact" class="btn btn--ghost">Join the Club</a>
+        </div>
+        <ul class="trust" aria-label="Highlights">
+          <li>Premium curation</li>
+          <li>Due-diligence first</li>
+          <li>Long-term value</li>
+        </ul>
+      </div>
+      <div class="hero-media" data-animate data-animate-delay="0.15" role="img" aria-label="Elegant architectural composition"></div>
+    </div>
+  </section>
 
-<!-- HERO -->
-<section id="home" class="section hero">
-<div class="container">
-<div class="hero-copy" data-animate data-animate-delay="0.05">
-<h1> A club for all types of investments. </h1>
-<p class="lead">Curated, premium opportunities with a white‑glove experience. We combine market insight, selective deal flow, and design‑led storytelling to help you invest with clarity.</p>
-<div class="cta">
-<a href="#projects" class="btn btn--primary">Explore Projects</a>
-<a href="#contact" class="btn btn--ghost">Join the Club</a>
-</div>
-<ul class="trust" aria-label="Highlights">
-<li>Premium curation</li>
-<li>Due‑diligence first</li>
-<li>Long‑term value</li>
-</ul>
-</div>
-<div class="hero-media" data-animate data-animate-delay="0.15" role="img" aria-label="Elegant architectural composition"></div>
-</div>
-</section>
-  
-<script src="script.js?v=1" defer></script>
+  <!-- PROJECTS -->
+  <section id="projects" class="section projects">
+    <div class="container">
+      <header class="section-header" data-animate>
+        <p class="eyebrow">Curated Portfolio</p>
+        <h2>Featured Projects</h2>
+        <p class="section-sub">A taste of the work we champion. Replace the placeholders with your real images later.</p>
+      </header>
+
+      <div class="grid">
+        <article class="card" data-animate>
+          <div class="card-media placeholder-img" aria-hidden="true"></div>
+          <div class="card-body">
+            <h3>Cadence Residential</h3>
+            <p>Modern coastal living with timeless lines and generous terraces.</p>
+            <a class="link" href="#">Learn more</a>
+          </div>
+        </article>
+
+        <article class="card" data-animate data-animate-delay="0.05">
+          <div class="card-media placeholder-img" aria-hidden="true"></div>
+          <div class="card-body">
+            <h3>Solaris Tower</h3>
+            <p>Glass, light, and horizon—an address designed for sunrise to sunset.</p>
+            <a class="link" href="#">Learn more</a>
+          </div>
+        </article>
+
+        <article class="card" data-animate data-animate-delay="0.1">
+          <div class="card-media placeholder-img" aria-hidden="true"></div>
+          <div class="card-body">
+            <h3>Bluma</h3>
+            <p>Quiet luxury in every square meter—crafted for collectors of calm.</p>
+            <a class="link" href="#">Learn more</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section id="why" class="section why">
+    <div class="container">
+      <header class="section-header" data-animate>
+        <p class="eyebrow">How We Help</p>
+        <h2>Invest with confidence</h2>
+      </header>
+
+      <div class="features">
+        <div class="feature" data-animate>
+          <div class="feature-icon" aria-hidden="true">◆</div>
+          <h3>Selective deal flow</h3>
+          <p>We screen opportunities for fundamentals, location quality, and long-term upside.</p>
+        </div>
+        <div class="feature" data-animate data-animate-delay="0.05">
+          <div class="feature-icon" aria-hidden="true">◆</div>
+          <h3>Design-led storytelling</h3>
+          <p>Premium visuals and narratives that articulate value for investors and residents.</p>
+        </div>
+        <div class="feature" data-animate data-animate-delay="0.1">
+          <div class="feature-icon" aria-hidden="true">◆</div>
+          <h3>Club experience</h3>
+          <p>Private updates, previews, and events—built for discerning members.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLUB -->
+  <section id="club" class="section club">
+    <div class="container">
+      <div class="club-inner">
+        <div class="club-copy" data-animate>
+          <p class="eyebrow">Member-Only</p>
+          <h2>About the Club</h2>
+          <p>Membership gives you early visibility into our pipeline, access to briefings, and priority for allocations. We take a long-view, focusing on projects that keep their promise—today and ten years from now.</p>
+          <a class="btn btn--primary" href="#contact">Request Invite</a>
+        </div>
+        <div class="club-media" data-animate data-animate-delay="0.1" role="img" aria-label="Minimal interior with light and shadow"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section contact">
+    <div class="container">
+      <header class="section-header" data-animate>
+        <p class="eyebrow">Start a conversation</p>
+        <h2>Contact us</h2>
+      </header>
+
+      <form class="contact-form" data-animate data-animate-delay="0.05" method="post" action="https://formspree.io/f/your-id">
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required placeholder="Jane Doe" />
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required placeholder="you@example.com" />
+        </div>
+        <div class="form-row">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required placeholder="Tell us what you’re looking for…"></textarea>
+        </div>
+        <button class="btn btn--primary" type="submit">Send</button>
+        <p class="form-note">No spam ever. We’ll reply within 1–2 business days.</p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="" class="logo small" />
+          <p>Maria Tamlik — Private Real Estate & Investment Club</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="#projects">Projects</a>
+          <a href="#why">Why Us</a>
+          <a href="#club">Club</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="footer-legal">
+          <p>© <span id="year"></span> Maria Tamlik. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://naccccer.github.io/maria-tamlik-site/script.js?v=5" defer></script>
 </body>
 </html>
