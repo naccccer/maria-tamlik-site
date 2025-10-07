@@ -1,73 +1,50 @@
-document.addEventListener('DOMContentLoaded', () => {
-
-    // --- SLIDER LOGIC ---
-    const slides = document.querySelectorAll('.slider-item');
-    let currentSlide = 0;
-    const slideInterval = 6000; // Change slide every 6 seconds
-
-    function nextSlide() {
-        // Hide current slide
-        slides[currentSlide].classList.remove('active');
-
-        // Move to the next index, or wrap around
-        currentSlide = (currentSlide + 1) % slides.length;
-
-        // Show new current slide
-        slides[currentSlide].classList.add('active');
-    }
-
-    // Start the slider auto-play
-    if (slides.length > 1) {
-        setInterval(nextSlide, slideInterval);
-    }
-
-    // --- CONTACT FORM LOGIC ---
-    const contactForm = document.getElementById('contact-form');
-    const formStatus = document.querySelector('.form-status');
-
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(event) {
-            event.preventDefault(); 
-
-            // Simple validation check
-            const inputs = this.querySelectorAll('input, textarea');
-            let isValid = true;
-            inputs.forEach(input => {
-                if (!input.value) {
-                    isValid = false;
-                }
-            });
-
-            if (isValid) {
-                // Simulate success
-                formStatus.textContent = 'Application received. A representative will contact you shortly.';
-                formStatus.style.color = 'var(--color-primary)'; // Use Maria Green for success
-                formStatus.style.display = 'block';
-
-                // Clear the form fields
-                this.reset();
-
-                // Hide status message after a few seconds
-                setTimeout(() => {
-                    formStatus.style.display = 'none';
-                }, 8000);
-
-            } else {
-                formStatus.textContent = 'Please complete all required fields.';
-                formStatus.style.color = 'red';
-                formStatus.style.display = 'block';
-            }
-        });
-    }
-
-    // --- GENERAL INTERACTIVITY (Optional) ---
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
+// Mobile nav toggle
+document.addEventListener('DOMContentLoaded', function () {
+  const navToggle = document.getElementById('navToggle');
+  const navMenu = document.getElementById('nav-menu');
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+      const open = navMenu.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', String(open));
     });
+  }
+
+  // Reveal sections (fallback shows all immediately)
+  const items = document.querySelectorAll('[data-animate]');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    items.forEach((el) => {
+      const d = el.getAttribute('data-animate-delay');
+      if (d) el.style.transitionDelay = `${d}s`;
+      io.observe(el);
+    });
+  } else {
+    // Old browsers: just show everything
+    items.forEach((el) => {
+      el.classList.add('is-visible');
+      el.style.transitionDelay = '0s';
+    });
+  }
+
+  // Header progress bar
+  const bar = document.getElementById('scrollbarBar');
+  function onScroll() {
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    const p = h > 0 ? (window.scrollY || document.documentElement.scrollTop) / h : 0;
+    if (bar) bar.style.width = `${Math.max(0, Math.min(1, p)) * 100}%`;
+  }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Footer year
+  const y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
 });
