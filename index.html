@@ -271,8 +271,26 @@
 
   <!-- Robust JS -->
   <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const navToggle=document.getElementById('navToggle');
-    const navMenu=document.getElementById('nav-menu');
-    if(navToggle&&navMenu){
-      navToggle.addEventListener('click',()=>{const open
+  // Show all sections immediately (simple and reliable)
+  (function () {
+    function showAll() {
+      document.querySelectorAll('[data-animate]').forEach(function (el) {
+        el.classList.add('is-visible');
+        el.style.transitionDelay = '0s';
+      });
+
+      // Footer year update
+      var y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', showAll);
+    } else {
+      showAll();
+    }
+  })();
+</script>
+</body>
+</html>
+
