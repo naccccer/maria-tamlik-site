@@ -1,279 +1,102 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Maria Tamlik — Private Real Estate & Investment Club</title>
-  <meta name="description" content="Maria Tamlik is a premium real estate & investment club. We curate high-quality projects and help members invest with confidence." />
-  <meta name="theme-color" content="#006039" />
-  <meta property="og:title" content="Maria Tamlik — Private Real Estate & Investment Club" />
-  <meta property="og:description" content="Premium real estate & investment club with curated opportunities." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/og-placeholder.png" />
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-
-  <!-- Inline CSS -->
-  <style>
-  :root{--accent:#006039;--bg:#fff;--fg:#0b0b0b;--muted:#6b7280}
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{margin:0;background:var(--bg);color:var(--fg);font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";line-height:1.6}
-  .container{width:min(1100px,92%);margin-inline:auto}
-  img{max-width:100%;height:auto;display:block}
-  a{color:inherit;text-decoration:none}
-  .eyebrow{letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;color:var(--muted)}
-  .lead{font-size:1.125rem;color:#1a1a1a;max-width:60ch}
-  .skip-link{position:absolute;left:-9999px;top:auto}
-  .skip-link:focus{position:fixed;left:1rem;top:1rem;background:#fff;border:2px solid var(--accent);padding:.4rem .6rem;border-radius:.5rem;z-index:999}
-  .site-header{position:sticky;top:0;z-index:50;backdrop-filter:saturate(180%) blur(10px);background:rgba(255,255,255,.85);border-bottom:1px solid #eee}
-  .header-inner{display:flex;align-items:center;justify-content:space-between;padding:.75rem 0}
-  .brand{display:inline-flex;gap:.6rem;align-items:center}
-  .logo{height:36px;width:auto}
-  .brand-text{font-weight:700;letter-spacing:.02em}
-  .nav-toggle{display:none;background:none;border:0;padding:.4rem}
-  .hamburger,.hamburger:before,.hamburger:after{background:#111;height:2px;width:24px;border-radius:2px;display:block;position:relative}
-  .hamburger:before,.hamburger:after{content:"";position:absolute;left:0;width:100%;height:2px;background:#111}
-  .hamburger:before{top:-7px}.hamburger:after{top:7px}
-  .nav-menu{display:flex;gap:1.1rem;align-items:center;list-style:none;margin:0;padding:0}
-  .nav-menu a{padding:.45rem .6rem;border-radius:.5rem}
-  .nav-menu a:hover,.nav-menu a:focus{background:#f4f4f5}
-  .scrollbar{height:2px;background:#f1f1f1}
-  .scrollbar__bar{height:2px;width:0;background:var(--accent);transform-origin:left}
-  .section{padding:clamp(3rem,6vw,6rem) 0}
-  .section-header{text-align:center;margin-bottom:2rem}
-  .section-header h2{font-size:clamp(1.6rem,4vw,2.2rem);margin:.25rem 0 .5rem}
-  .hero .container{display:grid;grid-template-columns:1.2fr 1fr;gap:2rem;align-items:center}
-  .hero h1{font-size:clamp(2rem,5vw,3rem);line-height:1.1;letter-spacing:-.02em}
-  .hero-media{border-radius:1.2rem;aspect-ratio:4/5;overflow:hidden;background:
-    radial-gradient(80% 60% at 30% 20%, #000 0, #161616 45%, #0b0b0b 100%),
-    linear-gradient(120deg, rgba(0,96,57,.22), transparent 50%);
-    box-shadow:0 28px 70px rgba(0,0,0,.18),0 10px 24px rgba(0,0,0,.12)}
-  .hero .cta{display:flex;gap:.8rem;margin-top:1rem}
-  .btn{display:inline-block;padding:.75rem 1rem;border-radius:.9rem;font-weight:600;border:1px solid #111}
-  .btn--primary{background:var(--accent);color:#fff;border-color:var(--accent)}
-  .btn--ghost{background:transparent}
-  .btn--ghost:hover{background:#f6f6f6}
-  .trust{display:flex;gap:1rem 1.4rem;flex-wrap:wrap;color:var(--muted);margin-top:1rem;list-style:none;padding:0}
-  .projects .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
-  .card{border:1px solid #eee;border-radius:1rem;background:#fff;overflow:hidden;transition:transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s}
-  .card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,.08)}
-  .card-media{aspect-ratio:4/3;background:#111}
-  .placeholder-img{background:
-    linear-gradient(160deg,#111 0%,#191919 60%),
-    radial-gradient(60% 40% at 50% 30%, rgba(0,96,57,.35) 0%, transparent 85%);background-blend-mode:screen}
-  .card-body{padding:1rem}
-  .card h3{margin:.2rem 0 .4rem;font-size:1.05rem}
-  .card p{margin:0 0 .6rem;color:#333}
-  .link{color:var(--accent);font-weight:600}
-  .link:hover{text-decoration:underline}
-  .features{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
-  .feature{padding:1rem;border:1px solid #eee;border-radius:1rem;background:#fff}
-  .feature-icon{width:36px;height:36px;border-radius:.6rem;display:grid;place-items:center;background:#111;color:#fff;margin-bottom:.5rem}
-  .club .club-inner{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;align-items:center}
-  .club-media{border-radius:1rem;aspect-ratio:4/5;background:
-    linear-gradient(120deg,#101010,#0E0E0E),
-    radial-gradient(40% 50% at 30% 20%, rgba(0,96,57,.25) 0%, transparent 80%);box-shadow:0 28px 70px rgba(0,0,0,.18),0 10px 24px rgba(0,0,0,.12)}
-  .contact-form{max-width:620px;margin:0 auto}
-  .form-row{display:grid;gap:.35rem;margin-bottom:.9rem}
-  input,textarea{border:1px solid #e5e7eb;border-radius:.75rem;padding:.75rem .85rem;font:inherit;background:#fff;color:#111}
-  input:focus,textarea:focus{outline:2px solid rgba(0,96,57,.4);outline-offset:2px}
-  .form-note{color:var(--muted);font-size:.9rem}
-  .site-footer{border-top:1px solid #eee;background:#fafafa;padding:2rem 0}
-  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:1rem;align-items:start}
-  .footer-nav{display:grid;gap:.4rem}
-  .footer-nav a:hover{color:var(--accent)}
-  .footer-legal{color:var(--muted);font-size:.9rem}
-  [data-animate]{opacity:0;transform:translateY(16px);transition:opacity .6s cubic-bezier(.2,.8,.2,1),transform .6s cubic-bezier(.2,.8,.2,1)}
-  [data-animate].is-visible{opacity:1;transform:none}
-  .reduced-motion [data-animate]{opacity:1!important;transform:none!important;transition:none!important}
-  @media (max-width:1000px){
-    .hero .container,.projects .grid,.features,.club .club-inner{grid-template-columns:1fr}
-    .hero-media{order:-1}
-    .nav-toggle{display:inline-block}
-    .nav-menu{position:absolute;right:1rem;top:100%;display:none;flex-direction:column;gap:.2rem;background:#fff;border:1px solid #eee;border-radius:.8rem;padding:.6rem;box-shadow:0 10px 30px rgba(0,0,0,.08)}
-    .nav-menu.open{display:flex}
-  }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maria Tamlik — Private Real Estate & Investment Club</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 </head>
 <body>
-  <a class="skip-link" href="#home">Skip to content</a>
 
-  <header class="site-header" data-animate>
-    <div class="container header-inner">
-      <a href="#home" class="brand">
-        <img src="assets/logo.png" alt="Maria Tamlik logo" class="logo" />
-        <span class="brand-text">Maria&nbsp;Tamlik</span>
-      </a>
-
-      <nav class="nav" aria-label="Primary">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" id="navToggle">
-          <span class="sr-only">Toggle navigation</span>
-          <div class="hamburger"></div>
-        </button>
-        <ul id="nav-menu" class="nav-menu">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#why">Why Us</a></li>
-          <li><a href="#club">The Club</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-    <div class="scrollbar" aria-hidden="true"><div class="scrollbar__bar" id="scrollbarBar"></div></div>
-  </header>
-
-  <!-- HERO -->
-  <section id="home" class="section hero" data-animate>
-    <div class="container">
-      <div class="hero-copy">
-        <h1>A club for all types of investments.</h1>
-        <p class="lead">Curated, premium opportunities with a white-glove experience. We combine market insight, selective deal flow, and design-led storytelling to help you invest with clarity.</p>
-        <div class="cta">
-          <a href="#projects" class="btn btn--primary">Explore Projects</a>
-          <a href="#contact" class="btn btn--ghost">Join the Club</a>
+    <header class="navbar">
+        <div class="container">
+            <a href="#" class="logo-link">
+                <img src="assets/logo.png" alt="Maria Tamlik Logo" class="logo">
+            </a>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#investment">Investments</a>
+                <a href="#contact" class="btn btn-primary">Join Club</a>
+            </nav>
         </div>
-        <ul class="trust" aria-label="Highlights">
-          <li>Premium curation</li>
-          <li>Due-diligence first</li>
-          <li>Long-term value</li>
-        </ul>
-      </div>
-      <div class="hero-media" role="img" aria-label="Elegant architectural composition"></div>
-    </div>
-  </section>
+    </header>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="section projects" data-animate>
-    <div class="container">
-      <header class="section-header">
-        <p class="eyebrow">Curated Portfolio</p>
-        <h2>Featured Projects</h2>
-        <p class="section-sub">A taste of the work we champion. Replace the placeholders with your real images later.</p>
-      </header>
+    <main>
+        <section class="hero">
+            
+            <div class="slider-item active" id="slide-1">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <h1>The Pearl Tower Collection</h1>
+                    <p class="subtitle">A landmark opportunity in prime global cities. Limited access for select members.</p>
+                    <a href="#investment" class="btn btn-large btn-primary">Explore Mandate</a>
+                </div>
+            </div>
 
-      <div class="grid">
-        <article class="card">
-          <div class="card-media placeholder-img" aria-hidden="true"></div>
-          <div class="card-body">
-            <h3>Cadence Residential</h3>
-            <p>Modern coastal living with timeless lines and generous terraces.</p>
-            <a class="link" href="#">Learn more</a>
-          </div>
-        </article>
-        <article class="card">
-          <div class="card-media placeholder-img" aria-hidden="true"></div>
-          <div class="card-body">
-            <h3>Solaris Tower</h3>
-            <p>Glass, light, and horizon—an address designed for sunrise to sunset.</p>
-            <a class="link" href="#">Learn more</a>
-          </div>
-        </article>
-        <article class="card">
-          <div class="card-media placeholder-img" aria-hidden="true"></div>
-          <div class="card-body">
-            <h3>Bluma</h3>
-            <p>Quiet luxury in every square meter—crafted for collectors of calm.</p>
-            <a class="link" href="#">Learn more</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
+            <div class="slider-item" id="slide-2">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <h1>Metropolis Residences</h1>
+                    <p class="subtitle">High-yield short-term rentals managed through a proprietary fractional ownership model.</p>
+                    <a href="#investment" class="btn btn-large btn-primary">View Details</a>
+                </div>
+            </div>
 
-  <!-- WHY -->
-  <section id="why" class="section why" data-animate>
-    <div class="container">
-      <header class="section-header">
-        <p class="eyebrow">How We Help</p>
-        <h2>Invest with confidence</h2>
-      </header>
+            <div class="slider-item" id="slide-3">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <h1>The Founders' Portfolio</h1>
+                    <p class="subtitle">Exclusive, off-market commercial properties reserved for our highest tier investors.</p>
+                    <a href="#investment" class="btn btn-large btn-primary">Request Invitation</a>
+                </div>
+            </div>
+            
+            </section>
 
-      <div class="features">
-        <div class="feature">
-          <div class="feature-icon" aria-hidden="true">◆</div>
-          <h3>Selective deal flow</h3>
-          <p>We screen opportunities for fundamentals, location quality, and long-term upside.</p>
-        </div>
-        <div class="feature">
-          <div class="feature-icon" aria-hidden="true">◆</div>
-          <h3>Design-led storytelling</h3>
-          <p>Premium visuals and narratives that articulate value for investors and residents.</p>
-        </div>
-        <div class="feature">
-          <div class="feature-icon" aria-hidden="true">◆</div>
-          <h3>Club experience</h3>
-          <p>Private updates, previews, and events—built for discerning members.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+        <section id="about" class="about">
+            <div class="container">
+                <h2>The Elite Circle of Investment</h2>
+                <p>Maria Tamlik is an invitation-only club dedicated to curating and managing premier real estate assets for our members. We offer bespoke investment strategies, off-market deals, and unparalleled market insight.</p>
+                <p>Our focus is on securing long-term wealth through diversified, stable, and high-potential properties across global markets.</p>
+            </div>
+        </section>
 
-  <!-- CLUB -->
-  <section id="club" class="section club" data-animate>
-    <div class="container">
-      <div class="club-inner">
-        <div class="club-copy">
-          <p class="eyebrow">Member-Only</p>
-          <h2>About the Club</h2>
-          <p>Membership gives you early visibility into our pipeline, access to briefings, and priority for allocations. We take a long-view, focusing on projects that keep their promise—today and ten years from now.</p>
-          <a class="btn btn--primary" href="#contact">Request Invite</a>
-        </div>
-        <div class="club-media" role="img" aria-label="Minimal interior with light and shadow"></div>
-      </div>
-    </div>
-  </section>
+        <section id="investment" class="investment-preview">
+            <div class="container">
+                <h2>Current Mandates</h2>
+                <div class="investment-card">
+                    <h3>Prime Residential Portfolio</h3>
+                    <p>Secured high-demand units in key metropolitan areas. Estimated annual yield: 9.5%</p>
+                </div>
+                <a href="#contact" class="btn btn-secondary">View Private Opportunities (Members Only)</a>
+            </div>
+        </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="section contact" data-animate>
-    <div class="container">
-      <header class="section-header">
-        <p class="eyebrow">Start a conversation</p>
-        <h2>Contact us</h2>
-      </header>
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Begin Your Exclusive Journey</h2>
+                <form id="contact-form">
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="email" placeholder="Professional Email" required>
+                    <textarea placeholder="Tell us about your investment profile." rows="4"></textarea>
+                    <button type="submit" class="btn btn-primary">Submit Application</button>
+                    <p class="form-status" style="display:none; color: var(--color-primary);"></p>
+                </form>
+            </div>
+        </section>
+    </main>
 
-      <form class="contact-form" method="post" action="https://formspree.io/f/your-id">
-        <div class="form-row">
-          <label for="name">Name</label>
-          <input id="name" name="name" type="text" required placeholder="Jane Doe" />
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Maria Tamlik. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
         </div>
-        <div class="form-row">
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" required placeholder="you@example.com" />
-        </div>
-        <div class="form-row">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" required placeholder="Tell us what you’re looking for…"></textarea>
-        </div>
-        <button class="btn btn--primary" type="submit">Send</button>
-        <p class="form-note">No spam ever. We’ll reply within 1–2 business days.</p>
-      </form>
-    </div>
-  </section>
+    </footer>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <img src="assets/logo.png" alt="" class="logo small" />
-          <p>Maria Tamlik — Private Real Estate & Investment Club</p>
-        </div>
-        <nav class="footer-nav" aria-label="Footer">
-          <a href="#projects">Projects</a>
-          <a href="#why">Why Us</a>
-          <a href="#club">Club</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <div class="footer-legal">
-          <p>© <span id="year"></span> Maria Tamlik. All rights reserved.</p>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Robust JS -->
-  <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const navToggle=document.getElementById('navToggle');
-    const navMenu=document.getElementById('nav-menu');
-    if(navToggle&&navMenu){
-      navToggle.addEventListener('click',()=>{const open
+    <script src="script.js"></script>
+</body>
+</html>
